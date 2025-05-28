@@ -33,6 +33,16 @@
             padding: 1rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .hero {
@@ -45,10 +55,28 @@
             padding: 2rem;
         }
 
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
         .section {
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: var(--color-accent);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
         }
 
         .services-grid {
@@ -64,10 +92,45 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            text-align: center;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .team-section {
+            text-align: center;
+            background-color: var(--color-secondary);
+            padding: 5rem 2rem;
+        }
+
+        .testimonials {
+            background-color: var(--color-white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        footer {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
 
         .cta-button {
@@ -78,15 +141,64 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s ease;
+            font-weight: bold;
         }
 
         .cta-button:hover {
             background: #8B7355;
         }
 
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 15px;
+            padding: 10px 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTM4MC45IDk3LjFDMzM5IDU1LjEgMjgzLjIgMzIgMjIzLjkgMzJjLTEyMi40IDAtMjIyLjQgOTkuNi0yMjIuNCAyMjIgMCAzOS4xIDEwLjIgNzcuMyAyOS42IDExMC45TDAgNDgwbDExNy43LTMwLjljMzIuNCAxNy42IDY4LjkgMjYuOSAxMDYuMSAyNi45aDAuMWMxMjIuMyAwIDIyNC4xLTk5LjYgMjI0LjEtMjIyIDAtNTkuMy0yMy4xLTExNS4xLTY1LjEtMTU2Ljl6TTIyMy45IDQzOC43Yy0zMy4yIDAtNjUuNy04LjktOTQtMjUuN2wtNi43LTQtNjkuOCAxOC4zbDE4LjYtNjguMWwtNC40LTctMjQuNy05My44YzAtOTIuOCA3NS41LTE2OC4yIDE2OC4yLTE2OC4yIDQ0LjkgMCA4Ny4yIDE3LjUgMTE4LjkgNDkuMnM0OS4yIDc0IDQ5LjIgMTE4LjljLTAuMSA5Mi45LTc1LjcgMTY4LjQtMTY4LjQgMTY4LjR6Ii8+PC9zdmc+') center/contain no-repeat;
+            display: inline-block;
+        }
+
         @media (max-width: 768px) {
             .section {
                 padding: 3rem 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            
+            .whatsapp-icon {
+                width: 18px;
+                height: 18px;
             }
         }
     </style>
@@ -100,7 +212,7 @@
         <div class="hero-content">
             <h1>Il Tuo Sorriso, La Nostra Priorità</h1>
             <p>Studio dentistico professionale a tua disposizione</p>
-            <a href="#contatti" class="cta-button">Prenota una Visita</a>
+            <a href="#contatti" class="cta-button">Scopri i Nostri Servizi</a>
         </div>
     </section>
 
@@ -109,13 +221,52 @@
         <div class="services-grid">
             <div class="service-card">
                 <h3>Implantologia</h3>
-                <p>Soluzioni permanenti per denti mancanti</p>
+                <p>Soluzioni permanenti per denti mancanti con tecniche all'avanguardia</p>
             </div>
-            <!-- Altri servizi... -->
+            <div class="service-card">
+                <h3>Ortodonzia</h3>
+                <p>Trattamenti personalizzati per un sorriso perfettamente allineato</p>
+            </div>
+            <div class="service-card">
+                <h3>Estetica Dentale</h3>
+                <p>Sbiancamento e procedure cosmetiche per un sorriso luminoso</p>
+            </div>
+            <div class="service-card">
+                <h3>Igiene Dentale</h3>
+                <p>Pulizia professionale e prevenzione per la salute orale</p>
+            </div>
         </div>
     </section>
 
-    <!-- Continua con altre sezioni... -->
+    <section class="team-section">
+        <h2>Il Nostro Team</h2>
+        <p>Professionisti qualificati al tuo servizio</p>
+        <!-- Aggiungi qui le foto e le bio del team -->
+    </section>
+
+    <section class="testimonials">
+        <h2>Dicono di Noi</h2>
+        <!-- Aggiungi qui le testimonianze -->
+    </section>
+
+    <section id="contatti" class="contact-section">
+        <h2>Contattaci</h2>
+        <div class="contact-info">
+            <p>Via Example, 123 - Città</p>
+            <p>Tel: 123-456-7890</p>
+            <p>Email: info@clinichedentis.it</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cliniche Dentis. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+39NUMEROTELEFONICO" class="whatsapp-float" target="_blank">
+        <i class="whatsapp-icon"></i>
+        <span>PRENOTA</span>
+    </a>
 
 </body>
 </html>
